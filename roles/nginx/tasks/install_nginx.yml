@@ -1,7 +1,7 @@
 ---
 - name: Install Nginx
   apt:
-    name: Nginx
+    name: nginx
     update_cache: yes
     force: yes
 
@@ -12,7 +12,8 @@
     owner: root
     group: root
     mode: '0644'
-  when: common_hostname == 'webserver-a'
+  when: hostvars[item].role == "webserver-a" 
+  with_items: "{{ groups['crx-webserver'] }}"
   notify: restart nginx service
 
 - name: Put index.html in /var/www/html/
@@ -22,5 +23,6 @@
     owner: root
     group: root
     mode: '0644'
-  when: common_hostname != 'webserver-a'
+  when: hostvars[item].role == "webserver-b" 
+  with_items: "{{ groups['crx-webserver'] }}"
   notify: restart nginx service
