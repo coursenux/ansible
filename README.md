@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to Vagrant 👋</h1>
+<h1 align="center">Welcome to Ansible 👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-2.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="http://coursenux.com">
