@@ -1,0 +1,7 @@
+---
+- name: Playbooks for web server
+  hosts: crx=webserver
+  vars:
+    common_hostname: webserver-a
+  roles:
+    - nginx

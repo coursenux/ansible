@@ -1,0 +1,7 @@
+---
+- name: Playbooks for loadbalancer
+  hosts: crx=loadbalancer
+  vars:
+    common_hostname: loadbalancer
+  roles:
+    - loadbalancer
