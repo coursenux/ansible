@@ -36,6 +36,8 @@ Python version
 
 - `> 3.7`
 
+See in ./playbooks/requirements.txt for the details
+
 ## Attention
 
 - Please don't commit and push credential here (Contact the Coursenux team to encrypt secrets using ansible vault)
