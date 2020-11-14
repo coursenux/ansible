@@ -30,7 +30,7 @@ ansible -i inventories/server.ini tag_Hostgroup_coursenux -m ping
 
 Ansbile version
 
-- `> 2.8.0`
+- `> 2.9.2`
 
 Python version
 
@@ -42,7 +42,7 @@ See in ./playbooks/requirements.txt for the details
 
 - Please don't commit and push credential here (Contact the Coursenux team to encrypt secrets using ansible vault)
 - Always use `Pull Request` to commit changes
-- Variables and Tags must be in the correct format: `<ROLE_NAME>_<TAG_NAME>` to avoid conflicts acrossdifferent roles.
+- Variables and Tags must be in the correct format: `<ROLE_NAME>_<TAG_NAME>` to avoid conflicts across different roles.
 (e.g. `redis_the_redis_variable`)
 - Always use **UNDERSCORES** (`_`) in role, variable, and hostgroup names.
 - Playbook's file names should be dash separated (e.g. `redis-platform.yaml`)
