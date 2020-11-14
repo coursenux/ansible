@@ -18,12 +18,12 @@ Example commands running from `./playbooks`
 # Running playbooks
 
 cd playbooks
-ansible-playbook -i inventories/server.ini coursenux.yaml --check
+ansible-playbook -i inventories/hosts.ini coursenux.yaml --check
 
 # Ping Ansible Command
 
 cd playbooks
-ansible -i inventories/server.ini tag_Hostgroup_coursenux -m ping
+ansible -i inventories/hosts.ini tag_Hostgroup_coursenux -m ping
 ```
 
 ## Requirements
