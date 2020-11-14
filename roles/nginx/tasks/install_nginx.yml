@@ -1,0 +1,26 @@
+---
+- name: Install Nginx
+  apt:
+    name: Nginx
+    update_cache: yes
+    force: yes
+
+- name: Put index.html in /var/www/html/
+  copy:
+    src: webserver-a.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+  when: common_hostname == 'webserver-a'
+  notify: restart nginx service
+
+- name: Put index.html in /var/www/html/
+  copy:
+    src: webserver-b.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+  when: common_hostname != 'webserver-a'
+  notify: restart nginx service
