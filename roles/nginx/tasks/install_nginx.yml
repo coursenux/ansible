@@ -5,24 +5,11 @@
     update_cache: yes
     force: yes
 
-- name: Put index.html in /var/www/html/
-  copy:
-    src: webserver-a.html
+- name: Put index.html in /var/www/html/ 
+  template:
+    src: index.html.j2
     dest: /var/www/html/index.html
     owner: root
     group: root
     mode: '0644'
-  when: hostvars[item].role == "webserver-a" 
-  with_items: "{{ groups['crx-webserver'] }}"
-  notify: restart nginx service
-
-- name: Put index.html in /var/www/html/
-  copy:
-    src: webserver-b.html
-    dest: /var/www/html/index.html
-    owner: root
-    group: root
-    mode: '0644'
-  when: hostvars[item].role == "webserver-b" 
-  with_items: "{{ groups['crx-webserver'] }}"
   notify: restart nginx service
