@@ -1,8 +1,6 @@
-[crx-webserver-a]
-192.168.100.21
-
-[crx-webserver-b]
-192.168.100.22
+[crx-webserver]
+192.168.100.21 crx_role=a
+192.168.100.22 crx_role=b
 
 [crx-loadbalancer]
 192.168.100.23

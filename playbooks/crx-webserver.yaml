@@ -1,14 +1,5 @@
 ---
 - name: Playbooks for web server A
-  hosts: crx-webserver-a
-  vars:
-    hostname: "Web Server 1"
-  roles:
-    - nginx
-
-- name: Playbooks for web server B 
-  hosts: crx-webserver-b
-  vars:
-    hostname: "Web Server 2"
+  hosts: crx-webserver
   roles:
     - nginx

@@ -30,7 +30,7 @@ ansible -i inventories/hosts.ini tag_Hostgroup_coursenux -m ping
 
 Ansbile version
 
-- `> 2.9.2`
+- `> 2.9.0`
 
 Python version
 

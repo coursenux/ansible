@@ -7,9 +7,20 @@
 
 - name: Put index.html in /var/www/html/ 
   template:
-    src: index.html.j2
+    src: webserver-a.html.j2
     dest: /var/www/html/index.html
     owner: root
     group: root
     mode: '0644'
+  when: crx_role == "a"
+  notify: restart nginx service
+
+- name: Put index.html in /var/www/html/ 
+  template:
+    src: webserver-b.html.j2
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: '0644'
+  when: crx_role == "b"
   notify: restart nginx service
