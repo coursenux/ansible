@@ -1,5 +1,5 @@
 ---
-- name: Playbooks for web server A
+- name: Playbooks for web server
   hosts: crx-webserver
   roles:
     - nginx

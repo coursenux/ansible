@@ -1,0 +1,23 @@
+---
+- name: Put hosts files in /etc/hosts
+  template:
+    src: hosts.j2
+    dest: /etc/hosts
+    owner: root
+    group: root
+    mode: '0644'
+ 
+- name: Install HAProxy
+  apt:
+    name: haproxy
+    update_cache: yes
+    force: yes
+
+- name: Put haproxy.cfg in /etc/haproxy/ 
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart haproxy service
