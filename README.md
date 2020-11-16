@@ -18,12 +18,12 @@ Example commands running from `./playbooks`
 # Running playbooks
 
 cd playbooks
-ansible-playbook -i inventories/hosts.ini coursenux.yaml --check
+ansible-playbook -i inventories/hosts coursenux.yaml --check
 
 # Ping Ansible Command
 
 cd playbooks
-ansible -i inventories/hosts.ini tag_Hostgroup_coursenux -m ping
+ansible -i inventories/hosts tag_Hostgroup_coursenux -m ping
 ```
 
 ## Requirements
@@ -47,5 +47,4 @@ See in ./playbooks/requirements.txt for the details
 - Always use **UNDERSCORES** (`_`) in role, variable, and hostgroup names.
 - Playbook's file names should be dash separated (e.g. `redis-platform.yaml`)
 
-If you have questions/suggestions to about Vagrant setup, feel free to contact the **Coursenux** team.
-
+If you have questions/suggestions to about Ansible setup, feel free to contact the **Coursenux** team.
